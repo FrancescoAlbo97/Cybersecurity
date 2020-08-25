@@ -1,22 +1,23 @@
 const Web3 = require('web3');
-const contractJson = require('/home/alessio/Scrivania/Progetto-Cybersecurity/build/contracts/Image.json');
+const contractJson = require('/home/alessio/Scrivania/Cybersecurity/build/contracts/Image.json');
 const contractAddress = contractJson.networks['10'];
 const contractABI = contractJson.abi;
 module.exports = {
-    getAll: function (){
+    getAll: async function (){
         var web3 = new Web3('http://localhost:22000');
 
         var block = new web3.eth.Contract(contractABI, contractAddress.address);
-        getImagesAddress(block) //recupera tutti gli hash delle immagini
-        .then((result) => {
-          result.array.forEach(element => {
-            getImageByAddress(block, element)  //recupera le info associate ad un hash(un'immagine)
-            .then((res) => console.log(res));
-          });
-        });
-        return "ciaoooo";
+        return getAllImages(block);
 
-        getAllImages()
+        async function getAllImages(block){
+          let bene = "ciao00000";
+          let allAddress = await getImagesAddress(block); //recupera tutti gli hash delle immagini
+          for(  i=0; i < allAddress.length; i++){
+            getImageByAddress(block, allAddress[i])  //recupera le info associate ad un hash(un'immagine)
+                  .then((res) => console.log(res));
+          }
+          return bene;
+        }
 
         function getImagesAddress(block) {
             return new Promise(

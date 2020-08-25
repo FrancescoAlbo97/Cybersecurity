@@ -48,13 +48,13 @@ router.post('/uploadIPFS', authenticateToken, (req, res) => {
           };
 
       request.post({url:'https://api.imagga.com/v2/tags', formData: formData},
-          function (error, response, body) {
+         function (error, response, body) {
               let data = JSON.parse(body);
               let tags = data.result.tags.slice(0, 5);
               getImageMetadata(f).then(
-                (metadata) => {
+                async (metadata) => {
                   sendBlock.send(hash, metadata, tags);
-                  let bene = getBlock.getAll();          
+                  let bene = await getBlock.getAll();          
                   console.log(bene);       
                 }
               );
