@@ -1,0 +1,4 @@
+Fatal: Error starting protocol stack: listen tcp :21002: bind: address already in use
+Fatal: Error starting protocol stack: listen tcp :21001: bind: address already in use
+Fatal: Error starting protocol stack: listen tcp :21003: bind: address already in use
+Fatal: Error starting protocol stack: listen tcp :21000: bind: address already in use

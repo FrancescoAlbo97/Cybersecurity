@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Drone</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+      <style>
+         .has-bg-img {
+            background: url('../droneImage.jpg')center center;
+            background-size:cover; 
+          }
+      </style>
+          
+  </head>
+  <body>
+     
+    <section class="hero is-fullheight has-bg-img">
+      <div class="hero-body has-text-centered">
+        <div class="container">
+          <div class="box">
+            <form id="formElem" method="POST" action="script1">
+              <p class="title is-3">Caricamento immagine dal drone </p>
+              <p class="title is-5">Selezionare un'immagine da inviare alla blockchain, è supportato solo il formato .jpg</p>
+              <div class="block">
+                <div id="file-js-example" class="file has-name is-centered">
+                  <div class="file is-info">
+                    <label class="file-label">
+                      <input class="file-input" type="file" id="image" accept=".jpg" name="image">
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                          Seleziona un file…
+                        </span>
+                      </span>
+                      <span class="file-name">
+                        Nessun file selezionanto
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="columns is-centered">
+                <div class="column is-half is-centered">
+                  <input id="btSubmit" type="submit" class="button is-info is-fullwidth is-focus is-rounded" disabled>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>  
+    <script>
+      const fileInput = document.querySelector('#file-js-example input[type=file]');
+      fileInput.onchange = () => {
+        if (fileInput.files.length > 0) {
+            const fileName = document.querySelector('#file-js-example .file-name');
+            fileName.textContent = fileInput.files[0].name;
+            let bt = document.getElementById('btSubmit');
+            bt.removeAttribute("disabled")
+        }
+        else{
+            bt.setAttribute("disabled")
+        }
+      }
+    </script> 
+    <script id="script1">
+      formElem.onsubmit = async (e) => {
+        e.preventDefault();
+    
+        let response = await fetch('/image/uploadIPFS', {
+          method: 'POST',
+          headers: {
+            Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyb25lIiwicGFzc3dvcmQiOiJkcm9uZTEyMyIsImlhdCI6MTU5NjgxNDA1NX0.DQ4OTP_c2KLrRWsZYm8B7Dhn5r-mPCXh6jjkY2bMck0'
+          },
+          body: new FormData(formElem)
+        });
+        let result = await response.json();
+        alert(JSON.stringify(result.hash));
+      };
+    </script>
+   
+   
+  </body>
+</html>

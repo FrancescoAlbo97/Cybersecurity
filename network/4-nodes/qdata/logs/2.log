@@ -1,0 +1,31 @@
+nohup: output accodato a 'nohup.out'
+DEBUG[08-25|15:15:12.126] Sanitizing Go's GC trigger               percent=100
+INFO [08-25|15:15:12.128] Maximum peer count                       ETH=50 LES=0 total=50
+INFO [08-25|15:15:12.128] Smartcard socket not found, disabling    err="stat /run/pcscd/pcscd.comm: no such file or directory"
+DEBUG[08-25|15:15:12.128] FS scan times                            list=64.405µs set=6.398µs diff=3.977µs
+DEBUG[08-25|15:15:12.128] Failed to decode keystore key            path=/home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/keystore/password.txt err=EOF
+TRACE[08-25|15:15:12.129] Handled keystore changes                 time=99.324µs
+TRACE[08-25|15:15:12.132] Started watching keystore folder         path=/home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/keystore
+WARN [08-25|15:15:12.134] permission-config.json file is missing. Smart-contract-based permission service will be disabled error="stat qdata/dd2/permission-config.json: no such file or directory"
+WARN [08-25|15:15:12.135] Found deprecated node list file /home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/static-nodes.json, please use the TOML config file instead. 
+INFO [08-25|15:15:12.136] Starting peer-to-peer node               instance=Geth/v1.9.7-stable-6005360c(quorum-v2.7.0)/linux-amd64/go1.13.13
+INFO [08-25|15:15:12.136] Allocated trie memory caches             clean=256.00MiB dirty=256.00MiB
+INFO [08-25|15:15:12.137] Allocated cache and file handles         database=/home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/geth/chaindata cache=768.00MiB handles=524288
+DEBUG[08-25|15:15:12.188] Chain freezer table opened               database=/home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/geth/chaindata/ancient table=headers items=0 size=0.00B
+DEBUG[08-25|15:15:12.190] Chain freezer table opened               database=/home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/geth/chaindata/ancient table=hashes  items=0 size=0.00B
+DEBUG[08-25|15:15:12.191] Chain freezer table opened               database=/home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/geth/chaindata/ancient table=bodies  items=0 size=0.00B
+DEBUG[08-25|15:15:12.193] Chain freezer table opened               database=/home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/geth/chaindata/ancient table=receipts items=0 size=0.00B
+DEBUG[08-25|15:15:12.202] Chain freezer table opened               database=/home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/geth/chaindata/ancient table=diffs    items=0 size=0.00B
+INFO [08-25|15:15:12.202] Opened ancient database                  database=/home/alessio/Scrivania/Cybersecurity/network/4-nodes/qdata/dd2/geth/chaindata/ancient
+INFO [08-25|15:15:12.203] Initialised chain configuration          config="{ChainID: 10 Homestead: 0 DAO: <nil> DAOSupport: false EIP150: 0 EIP155: 0 EIP158: 0 Byzantium: 0 IsQuorum: true Constantinople: 0 TransactionSizeLimit: 64 MaxCodeSize: 0 Petersburg: 0 Istanbul: 0 Engine: istanbul}"
+DEBUG[08-25|15:15:12.204] Current full block not old enough        number=0 hash=635024…0574bc delay=3162240
+INFO [08-25|15:15:12.208] Initialising Ethereum protocol           name=istanbul versions="[99 64]" network=10 dbversion=<nil>
+WARN [08-25|15:15:12.208] Upgrade blockchain database version      from=<nil> to=7
+INFO [08-25|15:15:12.612] Loaded most recent local header          number=0 hash=635024…0574bc td=1 age=51y4mo2w
+INFO [08-25|15:15:12.612] Loaded most recent local full block      number=0 hash=635024…0574bc td=1 age=51y4mo2w
+INFO [08-25|15:15:12.612] Loaded most recent local fast block      number=0 hash=635024…0574bc td=1 age=51y4mo2w
+DEBUG[08-25|15:15:12.613] Reinjecting stale transactions           count=0
+INFO [08-25|15:15:12.613] Regenerated local transaction journal    transactions=0 accounts=0
+DEBUG[08-25|15:15:12.614] Recalculated downloader QoS values       rtt=20s confidence=1.000 ttl=1m0s
+TRACE[08-25|15:15:12.632] Stored genesis voting snapshot to disk 
+Fatal: Error starting protocol stack: listen tcp :21001: bind: address already in use
