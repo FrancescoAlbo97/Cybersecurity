@@ -1,5 +1,5 @@
 const Web3 = require('web3');
-const contractJson = require('/home/alessio/Scrivania/Cybersecurity/build/contracts/Image.json');
+const contractJson = require('../../build/contracts/Image.json');
 const contractAddress = contractJson.networks['10'];
 const contractABI = contractJson.abi;
 module.exports = {

@@ -7,7 +7,7 @@ const cors = require('cors');
 require('dotenv/config');
 
 app.set('view engine', 'ejs');
-
+app.use(express.static('public'));
 //Middlewares
 app.use(cors());  //da usere per permette l'accessa da tutti i domini
 app.use(fileUpload({}));  //debug: true
