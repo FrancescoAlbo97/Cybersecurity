@@ -10,13 +10,17 @@ module.exports = {
         return getAllImages(block);
 
         async function getAllImages(block){
-          let bene = "ciao00000";
+          let list = [];
           let allAddress = await getImagesAddress(block); //recupera tutti gli hash delle immagini
           for(  i=0; i < allAddress.length; i++){
-            getImageByAddress(block, allAddress[i])  //recupera le info associate ad un hash(un'immagine)
-                  .then((res) => console.log(res));
+            let js = new Object();
+            const address = allAddress[i];
+            js = await getImageByAddress(block, address); //recupera le info associate ad un hash(un'immagine)
+            js['hash'] = address;
+            list.push(js);
           }
-          return bene;
+          console.log("lista pronta");
+          return list;
         }
 
         function getImagesAddress(block) {

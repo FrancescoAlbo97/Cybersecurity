@@ -16,3 +16,13 @@
 15:15:12.072582 version@stat F·[1] S·1KiB[1KiB] Sc·[0.25]
 15:15:12.080471 db@janitor F·3 G·0
 15:15:12.080500 db@open done T·38.352437ms
+=============== Aug 26, 2020 (CEST) ===============
+10:36:57.381052 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:36:57.382270 version@stat F·[1] S·1KiB[1KiB] Sc·[0.25]
+10:36:57.382306 db@open opening
+10:36:57.382381 journal@recovery F·1
+10:36:57.386688 journal@recovery recovering @3
+10:36:57.391476 memdb@flush created L0@5 N·4 S·633B "Dat..ion,v23":"quo..ive,v22"
+10:36:57.402965 version@stat F·[2] S·2KiB[2KiB] Sc·[0.50]
+10:36:57.413538 db@janitor F·4 G·0
+10:36:57.413561 db@open done T·31.24416ms

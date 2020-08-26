@@ -17,8 +17,17 @@ const ipfs = new ipfsClient({ host: 'localhost', port: '5001', protocol: 'http'}
 router.get('/', (req, res) => {
     res.render('../views/image.ejs');
 })
+
+//ROTTA PER RECUPERARE IMMAGINI
+router.get('/get', authenticateToken, (req, res) => {  
+    let images = new Object();
+    images['gallery'] = await getBlock.getAll(); 
+    res.json(images);
+})
+
+
 //ROTTA CARICAMENTO IMMAGINE SU IPFS
-router.post('/uploadIPFS', authenticateToken, (req, res) => {
+router.post('/uploadIPFS', authenticateToken, async (req, res) => {
   if(!req.files || Object.keys(req.files).length === 0){
       res.status(400).send('No file');
   }
@@ -34,8 +43,6 @@ router.post('/uploadIPFS', authenticateToken, (req, res) => {
       const f = fs.readFileSync(imagePath);
       const fileAdded = await ipfs.add({ path: "fire", content: f });
       hash = fileAdded.cid.toString(); //hash del file appena caricato
-      console.log(hash);
-      //getImageMetadata(f);
       
 
       let fs1 = require('fs'),
@@ -53,9 +60,11 @@ router.post('/uploadIPFS', authenticateToken, (req, res) => {
               let tags = data.result.tags.slice(0, 5);
               getImageMetadata(f).then(
                 async (metadata) => {
-                  sendBlock.send(hash, metadata, tags);
-                  let bene = await getBlock.getAll();          
-                  console.log(bene);       
+                  sendBlock.send(hash, metadata, tags);        
+                  console.log("caricamento avvenuto");
+                  let images = new Object();
+                  images['gallery'] = await getBlock.getAll(); 
+                  console.log(images);
                 }
               );
           }).auth(apiKey, apiSecret, true);
@@ -66,64 +75,7 @@ router.post('/uploadIPFS', authenticateToken, (req, res) => {
       res.json({hash: 'https://ipfs.io/ipfs/' + hash})
   })
 })
-/*
-//ROTTA CARICAMENTO IMMAGINE SU IPFS
-router.post('/uploadIPFS', authenticateToken, (req, res) => {
-    if(!req.files || Object.keys(req.files).length === 0){
-        res.status(400).send('No file');
-    }
-    //console.log(JSON.stringify(req.headers));
-    const file = req.files.image;
-    const filePath = './files/' + file.name;
-    let hash = "";
-    file.mv(filePath, async (err) => {
-        if (err) {
-            console.log('Error: failed to load the file');
-            return res.status(500).send(err);
-        }
-        const f = fs.readFileSync(filePath);
-        const fileAdded = await ipfs.add({ path: "fire", content: f });
-        hash = fileAdded.cid.toString(); //hash del file appena caricato
-        //console.log(hash);
-        //getImageMetadata(f);
-        fs.unlink(filePath, (err) => {   //rimuovo il file appena creato
-            if (err) console.log(err);
-        });
-        let apiReq = unirest("GET", "https://api.imagga.com/v2/tags");
-        const imageUrl = "https://ipfs.io/ipfs/" + hash;
-        apiReq.query({
-            "image_url": imageUrl,
-            "version": "2"
-        });
-        apiReq.headers({
-            "accept": "application/json",
-            "authorization": "Basic YWNjXzNhNGJiZGJhZTZhMTZiYToyODI1MWExNTk3NzNhZjRkMTU2OTc5MDQwN2RjNDRjOA=="
-        });
 
-        var tags;
-
-        apiReq.end(async function (res) {
-            //if (res.error) throw new Error(res.error);
-            if (res.error) tags = [
-              {"confidence": 1, 'tag': {'en': 'vehicle'}},
-              {"confidence": 1, 'tag': {'en': 'vehicle'}},
-              {"confidence": 1, 'tag': {'en': 'vehicle'}},
-              {"confidence": 1, 'tag': {'en': 'vehicle'}},
-              {"confidence": 1, 'tag': {'en': 'vehicle'}}
-            ];
-            else tags = res.body.result.tags.slice(0, 5);
-            //console.log(tags);
-            var metadata = await getImageMetadata(f);
-            sendBlock(hash, metadata, tags);
-        });
-        //res.json(res.body.result); //non riesco ad inviare in json indietro!! però funziona
-
-        res.json({hash: 'https://ipfs.io/ipfs/' + hash})
-        //console.log(tags);
-        
-    })
-    */
-  
 
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization']

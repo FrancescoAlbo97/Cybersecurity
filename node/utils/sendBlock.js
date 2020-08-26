@@ -20,7 +20,7 @@ module.exports = {
             .send({from: accounts[0]})
             .then((result) => 
             {
-              console.log(result);
+              console.log("caricamento immagine eseguito");
             });
         });         
     }
