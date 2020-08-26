@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 })
 
 //ROTTA PER RECUPERARE IMMAGINI
-router.get('/get', authenticateToken, (req, res) => {  
+router.get('/get', authenticateToken, async (req, res) => {  
     let images = new Object();
     images['gallery'] = await getBlock.getAll(); 
     res.json(images);
@@ -27,7 +27,7 @@ router.get('/get', authenticateToken, (req, res) => {
 
 
 //ROTTA CARICAMENTO IMMAGINE SU IPFS
-router.post('/uploadIPFS', authenticateToken, async (req, res) => {
+router.post('/uploadIPFS', authenticateToken, (req, res) => {
   if(!req.files || Object.keys(req.files).length === 0){
       res.status(400).send('No file');
   }

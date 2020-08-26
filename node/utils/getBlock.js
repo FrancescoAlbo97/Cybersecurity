@@ -42,17 +42,19 @@ module.exports = {
                 .call()
                 .then((result) => {
                   var list = [];
+                  let tag = new Object();
+                  tag = JSON.parse(result[1][i]);
                   for(i = 0; i < 5; i++){
                     list.push({
-                      "confidence": parseInt(result[0][i])
-                    },
-                    {"tag" : result[1][i]}
-                    );
+                      "confidence": parseInt(result[0][i]),
+                      "tag" : tag['en']
+                    });
                   }
                   var newJson = new Object();
                   newJson['measures'] = list;
                   newJson['image'] = JSON.parse(result[2]);
                   newJson['gps'] = JSON.parse(result[3]);
+                  console.log(newJson)
                   resolve(newJson);
                 });
               } 
