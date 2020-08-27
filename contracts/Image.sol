@@ -26,13 +26,18 @@ contract Image {
     string memory _gpsInfo
   ) public {
     if(!contains(_imagesAddress)){
+      ImageStruct storage newImage = blocks[_imagesAddress];
+      newImage.confidences = _confidences;
+      newImage.tags = _tags;
+      newImage.imageInfo = _imageInfo;
+      newImage.gpsInfo = _gpsInfo;
       imagesAddress.push(_imagesAddress);
-      blocks[_imagesAddress] = ImageStruct({
-      confidences: _confidences,
-      tags: _tags,
-      imageInfo: _imageInfo,
-      gpsInfo: _gpsInfo
-      });
+    }
+    else{
+      blocks[_imagesAddress].confidences = _confidences;
+      blocks[_imagesAddress].tags = _tags;
+      blocks[_imagesAddress].imageInfo = _imageInfo;
+      blocks[_imagesAddress].gpsInfo = _gpsInfo;
     }
   }
 

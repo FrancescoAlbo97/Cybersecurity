@@ -7,8 +7,8 @@ const jwt = require('jsonwebtoken');
 const ipfsClient = require('ipfs-http-client');
 //const https = require("https");
 var ExifImage = require('exif').ExifImage;
-let unirest = require("unirest");
-const { rejects } = require('assert');
+//let unirest = require("unirest");
+//const { rejects } = require('assert');
 
 
 const ipfs = new ipfsClient({ host: 'localhost', port: '5001', protocol: 'http'});
@@ -21,7 +21,10 @@ router.get('/', (req, res) => {
 //ROTTA PER RECUPERARE IMMAGINI
 router.get('/get', authenticateToken, async (req, res) => {  
     let images = new Object();
-    images['gallery'] = await getBlock.getAll(); 
+    const list = await getBlock.getAll(); 
+    images['gallery'] = list;
+    console.log("ecco il json");
+    console.log(images);
     res.json(images);
 })
 

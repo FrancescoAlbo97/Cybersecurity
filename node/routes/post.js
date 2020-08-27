@@ -5,17 +5,6 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
 
 
-//GET BACK ALL THE POSTS *inutile
-router.get('/', async (req,res) => {
-    try {
-        const posts = await UsersCredentials.find();
-        res.json(posts);
-    } catch (err) {
-        res.json({ message: err })
-    }    
-});
-
-
 //SUBMITS A POST
 router.post('/', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
@@ -54,28 +43,6 @@ router.post('/login', async (req, res) => {
     }
 })
 
-//DELETE POST *inutile
-router.delete('/:postId', async (req, res) => {
-    try {
-        const removedPost = UsersCredentials.remove({_id: req.params.postId});
-        res.json(removedPost);
-    } catch (err) {
-        res.json({ message: err });
-    }
-})
-
-//UPDATE A POST *inutile
-router.patch('/:postId', async (req, res) => {
-    try {
-        const updatedPost = await UsersCredentials.updateOne(
-            { _id: req.params.postId},
-            { $set: {title: req.body.title}}
-        );
-        res.json(updatedPost);
-    } catch {
-        res.json({ message: err });
-    }
-})
 
 function generateToken(user){
     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);

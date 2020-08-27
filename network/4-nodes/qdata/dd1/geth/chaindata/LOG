@@ -36,3 +36,20 @@
 18:22:06.800180 version@stat F·[3] S·478KiB[478KiB] Sc·[0.75]
 18:22:06.819629 db@janitor F·5 G·0
 18:22:06.819689 db@open done T·92.079334ms
+=============== Aug 27, 2020 (CEST) ===============
+12:05:10.082052 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+12:05:10.083511 version@stat F·[3] S·478KiB[478KiB] Sc·[0.75]
+12:05:10.083580 db@open opening
+12:05:10.083696 journal@recovery F·1
+12:05:10.096429 journal@recovery recovering @9
+12:05:10.176478 memdb@flush created L0@11 N·6604 S·431KiB "H\x00\f..\xfb]J,v11491":"r\x00\x00..m\x83\xb8,v13557"
+12:05:10.191272 version@stat F·[4] S·909KiB[909KiB] Sc·[1.00]
+12:05:10.206410 db@janitor F·6 G·0
+12:05:10.206473 db@open done T·122.876015ms
+12:05:10.206581 table@compaction L0·4 -> L1·0 S·909KiB Q·13563
+12:05:10.411103 table@build created L1@14 N·7837 S·697KiB "Dat..ion,v23":"\xeef!..\x97DC,v7"
+12:05:10.411255 version@stat F·[0 1] S·697KiB[0B 697KiB] Sc·[0.00 0.01]
+12:05:10.415012 table@compaction committed F-3 S-212KiB Ke·0 D·5722 T·207.911261ms
+12:05:10.415561 table@remove removed @8
+12:05:10.416101 table@remove removed @5
+12:05:10.416224 table@remove removed @2
