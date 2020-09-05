@@ -76,7 +76,8 @@ http://localhost:3000/
 
 Effettuare il Login con le credenziali per visualizzare le immagini "caricate dal drone"
 ```
-credenziali
+user: Admin05
+password: Av6jW!x
 ```
 
 # Documentazione
