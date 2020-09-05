@@ -50,3 +50,5 @@
 14:25:23.489779 table@compaction committed F-2 S-318B Ke·0 D·2 T·8.659529ms
 14:25:23.490719 table@remove removed @8
 14:25:23.490772 table@remove removed @5
+16:44:54.952879 db@close closing
+16:44:54.952962 db@close done T·81.242µs
