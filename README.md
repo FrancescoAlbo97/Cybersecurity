@@ -10,8 +10,6 @@
 
 - [Come iniziare](#come-iniziare)
 - [Come contribuire](#come-contribuire)
-- [Manutenzione](#manutenzione)
-- [Licenza](#licenza)
 
 # Come iniziare
 
@@ -21,23 +19,3 @@
 ## Documentazione
 ### Link a documentazione esterna 
 
-# Come contribuire
-## Struttura delle directory / branch
-
-## Community
-
-### Code of conduct
-
-### Responsible Disclosure
-
-### Segnalazione bug e richieste di aiuto
-
-# Manutenzione 
-
-# Licenza 
-
-## Licenza generale 
-
-## Autori e Copyright
-
-## Licenze software dei componenti di terze parti

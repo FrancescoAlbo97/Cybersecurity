@@ -5,10 +5,7 @@ const router = express.Router();
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 const ipfsClient = require('ipfs-http-client');
-//const https = require("https");
 var ExifImage = require('exif').ExifImage;
-//let unirest = require("unirest");
-//const { rejects } = require('assert');
 
 
 const ipfs = new ipfsClient({ host: 'localhost', port: '5001', protocol: 'http'});
@@ -23,8 +20,6 @@ router.get('/get', authenticateToken, async (req, res) => {
     let images = new Object();
     const list = await getBlock.getAll(); 
     images['gallery'] = list;
-    console.log("ecco il json");
-    console.log(images);
     res.json(images);
 })
 
@@ -34,7 +29,6 @@ router.post('/uploadIPFS', authenticateToken, (req, res) => {
   if(!req.files || Object.keys(req.files).length === 0){
       res.status(400).send('No file');
   }
-  //console.log(JSON.stringify(req.headers));
   const file = req.files.image;
   const imagePath = './files/' + file.name;
   let hash = "";
@@ -64,10 +58,9 @@ router.post('/uploadIPFS', authenticateToken, (req, res) => {
               getImageMetadata(f).then(
                 async (metadata) => {
                   sendBlock.send(hash, metadata, tags);        
-                  console.log("caricamento avvenuto");
+                  console.log("caricamento...");
                   let images = new Object();
                   images['gallery'] = await getBlock.getAll(); 
-                  console.log(images);
                 }
               );
           }).auth(apiKey, apiSecret, true);
@@ -101,7 +94,6 @@ function getImageMetadata(filePath) {
                 console.log('Error: '+error.message);
             else
               resolve(exifData);
-                //console.log(exifData); // Do something with your data!
         });
     } catch (error) {
         console.log('Error: ' + error.message);

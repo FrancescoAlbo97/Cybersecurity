@@ -16,7 +16,6 @@ var simple = simpleContract.new(42, {from:web3.eth.accounts[0], data: bytecode, 
       console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
     } else {
       console.log("Contract mined! Address: " + contract.address);
-      console.log(contract);
     }
   }
 });

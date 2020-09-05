@@ -6,7 +6,7 @@ module.exports = {
     send: function ( hash, metadata, tags){
         var web3 = new Web3('http://localhost:22000');
         var block = new web3.eth.Contract(contractABI, contractAddress.address);
-        web3.eth.getAccounts().then(console.log);
+        web3.eth.getAccounts();
     
         let accounts = [];
     
@@ -20,7 +20,7 @@ module.exports = {
             .send({from: accounts[0]})
             .then((result) => 
             {
-              console.log("caricamento immagine eseguito");
+              console.log("caricamento immagine avvenuto");
             });
         });         
     }
