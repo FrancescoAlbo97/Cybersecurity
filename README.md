@@ -1,13 +1,6 @@
-# Annunci / Status del progetto
+# Progetto Cybersecurity UNIVPM 
 
-# Titolo
-
-Progetto Cybersecurity UNIVPM GRUPPO 7
-
-
-> Sottotitolo / Slogan / Descrizione breve
-
-*Read this in other languages: [English](README.EN.md).*
+> GRUPPO 7: Alborino Francesco, Borc Bogdan Petru, Marchetti Michele, Mazzucchelli Chiara, Scoppolini Massini Lorenzo
 
 ## Immagini e GIF
 
