@@ -27,6 +27,7 @@ cd go-ipfs && sudo bash install.sh && ipfs init
 ```bash
 ipfs daemon
 ```
+Lasciare attivo il daemon per poter utilizzare il servizio ipfs
 
 ## Scaricare il progetto
 
@@ -37,15 +38,15 @@ git clone https://github.com/FrancescoAlbo97/Cybersecurity.git
 ## Avviare la Blockchain Quorum
 
 ```bash
-cd network/4-nodes && ./start.sh
+cd Cybersecurity/network/4-nodes && ./start.sh
 ```
 
-Tornare poi sulla cartella principale
+Tornare poi sulla cartella Cybersecurity
 
 ## Installare ed eseguire Truffle
 
 ```bash
-npm install -g truffle
+sudo npm install -g truffle
 truffle migrate
 ```
 
@@ -55,14 +56,18 @@ truffle migrate
 cd node
 sudo npm install 
 ```
+> Se qualche package dovesse dar problemi, eseguire:
+```bash
+sudo npm install *package* -g --save
+```
+con nodemon al posto di *package* per esempio.
 
 ## Avviare il server e il sito
 
 ```bash
 nodemon app.js
 ```
-
-In seguito accedere a
+Una volta comparso il print "connected to db" accedere a
 ```
 http://localhost:3000/image
 ```
@@ -82,13 +87,23 @@ password: Av6jW!x
 
 # Documentazione
 
+## Codice Frontend
+
+Nella cartella Cybersecurity/node/project_front_end è disponibile il codice del frontend.
+Comunque per semplicità di utilizzo è stato realizzato già il build e inserito nella cartella Cybersecurity/node/public.
+
 ## Link a documentazione esterna 
 
-IPFS [link](https://docs.ipfs.io/how-to/command-line-quick-start/#install-ipfs).
+IPFS [link](https://docs.ipfs.io/how-to/command-line-quick-start/#install-ipfs)
 
 Quorum-wizard [link](https://github.com/jpmorganchase/quorum-wizard)
 
 Truffle [link](https://www.trufflesuite.com/docs)
+
+Npm [link](https://docs.npmjs.com/packages-and-modules/)
+
+Flutter [link](https://flutter.dev/web)
+
 
 
 
