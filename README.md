@@ -57,10 +57,10 @@ cd node
 sudo npm install 
 ```
 > Se qualche package dovesse dar problemi, eseguire:
-```bash
+ ```bash
 sudo npm install *package* -g --save
 ```
-con nodemon al posto di *package* per esempio.
+> con nodemon al posto di *package* per esempio.
 
 ## Avviare il server e il sito
 
