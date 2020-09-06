@@ -68,7 +68,7 @@ class _FormLoginState extends State<FormLogin> {
                       child: Container(),
                     ),
                     FlatButton(
-                      child: Text('Submit'),
+                      child: Text('Sign in'),
                       onPressed: widget.isLock
                         ? null
                         : () => {

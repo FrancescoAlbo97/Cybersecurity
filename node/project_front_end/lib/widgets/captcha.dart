@@ -62,7 +62,7 @@ class _CaptchaState extends State<Captcha> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 20),
-                  child: Text('Ruota correttamente l\'immagine \nper abilitare l\'accessso.',
+                  child: Text('Tenere premuto un punto \ndell\'immagine e ruotarla correttamente \nper abilitare l\'accessso.',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200)
                   ),
                 ),
