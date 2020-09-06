@@ -92,6 +92,8 @@ password: Av6jW!x
 Nella cartella Cybersecurity/node/project_front_end è disponibile il codice del frontend.
 Comunque per semplicità di utilizzo è stato realizzato già il build e inserito nella cartella Cybersecurity/node/public.
 
+Nella cartella Cybersecurity/immagini sono disponibili le immagini di prova da caricare per simulare l'invio del drone
+
 ## Link a documentazione esterna 
 
 IPFS [link](https://docs.ipfs.io/how-to/command-line-quick-start/#install-ipfs)
