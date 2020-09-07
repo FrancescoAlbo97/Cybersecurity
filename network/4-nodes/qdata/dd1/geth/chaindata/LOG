@@ -86,3 +86,22 @@
 18:08:04.753031 version@stat F·[3 1] S·4MiB[4MiB 697KiB] Sc·[0.75 0.01]
 18:08:04.775677 db@janitor F·6 G·0
 18:08:04.775715 db@open done T·58.05018ms
+=============== Sep 7, 2020 (CEST) ===============
+11:14:34.936840 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:14:34.986437 version@stat F·[3 1] S·4MiB[4MiB 697KiB] Sc·[0.75 0.01]
+11:14:34.986580 db@open opening
+11:14:34.986741 journal@recovery F·1
+11:14:35.015805 journal@recovery recovering @22
+11:14:35.038679 memdb@flush created L0@24 N·1521 S·104KiB "H\x06C.._h\xd2,v78630":"r\x00\x00..\xdcbc,v79227"
+11:14:35.048916 version@stat F·[4 1] S·4MiB[4MiB 697KiB] Sc·[1.00 0.01]
+11:14:35.064364 db@janitor F·7 G·0
+11:14:35.064480 db@open done T·77.850667ms
+11:14:35.064591 table@compaction L0·4 -> L1·1 S·4MiB Q·79233
+11:14:35.404944 table@build created L1@27 N·28738 S·2MiB "\x00\xe4\xfc..;59,v76795":"h\x00\x00..\v\xban,v55514"
+11:14:35.555158 table@build created L1@28 N·14834 S·1MiB "h\x00\x00..\x18\x06u,v36754":"\xff\xf2*..\x8b|H,v76658"
+11:14:35.557545 version@stat F·[0 2] S·3MiB[0B 3MiB] Sc·[0.00 0.04]
+11:14:35.559008 table@compaction committed F-3 S-1MiB Ke·0 D·29931 T·494.380315ms
+11:14:35.559148 table@remove removed @21
+11:14:35.563883 table@remove removed @18
+11:14:35.569949 table@remove removed @15
+11:14:35.570107 table@remove removed @14
