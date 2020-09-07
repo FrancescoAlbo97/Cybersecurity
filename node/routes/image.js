@@ -47,7 +47,6 @@ router.post('/uploadIPFS', authenticateToken, (req, res) => {
         getImageMetadata(f).then(
             async (result) => {
                 metadata = result;
-                console.log("ciao" + isEmpty(metadata.exif));
                 if(!isEmpty(metadata.exif)){
                     getImageData(imagePath).then(
                         async (result) => {
