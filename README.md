@@ -10,6 +10,12 @@
 
 # Come iniziare
 
+## Scaricare il progetto
+
+```bash
+git clone https://github.com/FrancescoAlbo97/Cybersecurity.git
+```
+
 ## Installare go-ipfs
 
 ```bash
@@ -28,12 +34,6 @@ cd go-ipfs && sudo bash install.sh && ipfs init
 ipfs daemon
 ```
 Lasciare attivo il daemon per poter utilizzare il servizio ipfs
-
-## Scaricare il progetto
-
-```bash
-git clone https://github.com/FrancescoAlbo97/Cybersecurity.git
-```
 
 ## Avviare la Blockchain Quorum
 
@@ -71,7 +71,7 @@ Una volta comparso il print "connected to db" accedere a
 http://localhost:3000/image
 ```
 
-per caricare le immagini simulando l'invio di queste da parte del drone
+per caricare le immagini simulando l'invio di queste da parte del drone, quelle di prova sono state riportate nella Cartella Cybersecurity/immagini/
 
 In seguito accedere a
 ```
