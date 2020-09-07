@@ -53,8 +53,7 @@ truffle migrate
 ## Installare Dipendenze di Node.js
 
 ```bash
-cd node
-sudo npm install 
+cd node && sudo npm install 
 ```
 > Se qualche package dovesse dar problemi, eseguire:
  ```bash
