@@ -1,6 +1,9 @@
 #go-ipfs
 #/go-ipfs/
 
+#files
+/files/*
+
 # Logs
 logs
 *.log

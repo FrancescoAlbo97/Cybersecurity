@@ -10,18 +10,18 @@
 
 # Come iniziare
 
-## Scaricare go-ipfs
-
-```bash
-wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs_v0.6.0_linux-amd64.tar.gz
-tar -xvzf go-ipfs_v0.6.0_linux-amd64.tar.gz
-cd go-ipfs && sudo bash install.sh && ipfs init
-```
 ## Installare go-ipfs
 
 ```bash
 cd go-ipfs && sudo bash install.sh && ipfs init
 ```
+> Se Ipfs dovesse dare problemi, scaricarlo in questo modo:
+```bash
+wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs_v0.6.0_linux-amd64.tar.gz
+tar -xvzf go-ipfs_v0.6.0_linux-amd64.tar.gz
+cd go-ipfs && sudo bash install.sh && ipfs init
+```
+
 ## Avviare
 
 ```bash
