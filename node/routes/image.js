@@ -5,6 +5,7 @@ const router = express.Router();
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 const ipfsClient = require('ipfs-http-client');
+const { isNullOrUndefined } = require('util');
 var ExifImage = require('exif').ExifImage;
 
 
@@ -46,14 +47,15 @@ router.post('/uploadIPFS', authenticateToken, (req, res) => {
         getImageMetadata(f).then(
             async (result) => {
                 metadata = result;
-                if(metadata){
+                console.log("ciao" + isEmpty(metadata.exif));
+                if(!isEmpty(metadata.exif)){
                     getImageData(imagePath).then(
                         async (result) => {
                             tags = result;
                             await sendToBlockChain(hash, metadata, tags); 
                         }
                     );
-                }               
+                }else console.log("caricamento immagine non avvenuto");       
         
                 fs.unlink(imagePath, (err) => {   //rimuovo il file appena creato
                     if (err) console.log(err);
@@ -73,6 +75,14 @@ router.post('/uploadIPFS', authenticateToken, (req, res) => {
 
     })
 })
+
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 
 
 function authenticateToken(req, res, next) {
